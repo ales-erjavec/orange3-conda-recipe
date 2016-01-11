@@ -1,0 +1,36 @@
+package:
+  name: chardet
+  version: "2.3.0"
+
+source:
+  fn: chardet-2.3.0.tar.gz
+  url: https://pypi.python.org/packages/source/c/chardet/chardet-2.3.0.tar.gz
+  md5: 25274d664ccb5130adae08047416e1a8
+
+build:
+  entry_points:
+    - chardetect = chardet.chardetect:main
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - chardet
+
+  commands:
+    - chardetect --help
+
+about:
+  home: https://github.com/chardet/chardet
+  license: GNU Library or Lesser General Public License (LGPL)
+  summary: 'Universal encoding detector for Python 2 and 3'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

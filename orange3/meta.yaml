@@ -1,0 +1,89 @@
+package:
+  name: orange3
+  version: "3.2.0"
+
+source:
+  # fn: Orange-3.2.dev0+dfc525c.tar.gz
+  # url: https://dl.dropboxusercontent.com/u/100248799/Orange-3.2.dev0%2Bdfc525c.tar.gz
+  # md5: 7bb68a73225d755559f8fc7bb9454663
+  git_rev: stable
+  git_url: https://github.com/biolab/orange3.git
+
+build:
+  # number: 1
+  entry_points:
+    - orange-canvas = Orange.canvas.__main__:main
+
+  osx_is_app: True
+
+requirements:
+  build:
+    - python
+    - setuptools
+    # https://github.com/numpy/numpy/pull/6470
+    - numpy 1.9.2  # [win]
+    - numpy        # [not win]
+    - scipy
+
+  run:
+    - python
+    - setuptools
+    - numpy         >=1.9.0
+    - scipy
+    - scikit-learn  >=0.16
+    - bottlechest
+    - chardet       >=2.3.0
+    - docutils
+    - xlrd          >=0.9.2
+    - pyqt
+    - pyqtgraph
+    - python.app    # [osx]
+
+test:
+  # Python imports
+  imports:
+    - Orange
+    - Orange.canvas
+    - Orange.canvas.application
+    - Orange.canvas.application.tutorials
+    - Orange.canvas.canvas
+    - Orange.canvas.canvas.items
+    - Orange.canvas.document
+    - Orange.canvas.gui
+    - Orange.canvas.help
+    - Orange.canvas.preview
+    - Orange.canvas.registry
+    - Orange.canvas.scheme
+    - Orange.canvas.styles
+    - Orange.canvas.utils
+
+    - Orange.widgets
+    - Orange.widgets.classify
+    - Orange.widgets.data
+    - Orange.widgets.evaluate
+    - Orange.widgets.regression
+    - Orange.widgets.unsupervised
+    - Orange.widgets.visualize
+
+    - Orange.classification
+    - Orange.clustering
+    - Orange.data
+    - Orange.distance
+    - Orange.evaluation
+    - Orange.preprocess
+    - Orange.projection
+    - Orange.regression
+    - Orange.statistics
+
+  commands:
+    - orange-canvas --help
+
+app:
+  entry: orange-canvas
+  summary: 'data visualization and data analysis tool'
+  icon: icon_48x48.png
+
+about:
+  home: http://orange.biolab.si/
+  license: GNU General Public License v3 or later (GPLv3+)
+  summary: 'Orange, a component-based data mining framework.'
