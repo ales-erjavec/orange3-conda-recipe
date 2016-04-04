@@ -1,18 +1,12 @@
 package:
   name: orange3
-  # NOTE: This requires conda-build=1.18.1 (!=1.18.2)
-  #     https://github.com/conda/conda-build/issues/713
-  version: "3.2.dev0+{{ environ.get('GIT_FULL_HASH', 'Unknown')[:7] }}"
-  # version: "3.2.dev0+dfc525c"
+  version: "3.3.1.dev0+5d39ea2"  # $(git rev-parse --short $git_rev)
+
 source:
-  # fn: Orange-3.2.dev0+dfc525c.tar.gz
-  # url: https://dl.dropboxusercontent.com/u/100248799/Orange-3.2.dev0%2Bdfc525c.tar.gz
-  # md5: 7bb68a73225d755559f8fc7bb9454663
-  git_rev: stable
+  git_rev: 3.3.1
   git_url: https://github.com/biolab/orange3.git
 
 build:
-#  number: '{{ environ.get("GIT_DESCRIBE_NUMBER", 0) }}'
   number: 0
   entry_points:
     - orange-canvas = Orange.canvas.__main__:main
