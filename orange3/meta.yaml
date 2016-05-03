@@ -33,6 +33,7 @@ requirements:
     - xlrd          >=0.9.2
     - pyqt
     - pyqtgraph
+    - joblib
     - python.app    # [osx]
 
 test:
