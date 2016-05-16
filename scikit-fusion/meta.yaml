@@ -1,0 +1,44 @@
+package:
+  name: scikit-fusion
+  version: "0.2.1"
+
+source:
+  fn: scikit-fusion-0.2.1.tar.gz
+  url: https://pypi.python.org/packages/f2/63/479e402be5a7bea25cfc15581604aed650f920922e10a98ca5a2c352b00d/scikit-fusion-0.2.1.tar.gz
+  md5: d91236a5fe74cc32c5979b7e2b2646f2
+
+build:
+  script:
+    - pip install --no-deps --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+
+  run:
+    - python
+    - numpy >=1.7.0
+    - scipy >=0.12.0
+    - joblib >=0.8.4
+
+test:
+  # Python imports
+  imports:
+    - skfusion
+    - skfusion.datasets
+    - skfusion.fusion
+    - skfusion.fusion.base
+    - skfusion.fusion.decomposition
+    - skfusion.tests
+
+
+about:
+  home: http://github.com/marinkaz/scikit-fusion
+  license: GPLv3
+  summary: 'A Python module for data fusion built on top of factorized models.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

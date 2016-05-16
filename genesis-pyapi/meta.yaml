@@ -1,0 +1,36 @@
+package:
+  name: genesis-pyapi
+  version: "1.2.0"
+
+source:
+  fn: Genesis-PyAPI-1.2.0.tar.gz
+  url: https://pypi.python.org/packages/d6/e8/3fdcc68dfe5db49010f423b90e0860dc02ebcfed34226acc9e9fe4009943/Genesis-PyAPI-1.2.0.tar.gz
+  md5: 3d5c6dc30f37811a23eea3699837a216
+
+build:
+  script:
+    - pip install --no-deps --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+
+  run:
+    - python
+    - requests >=2.6.0
+    - slumber >=0.7.1
+
+test:
+  imports:
+    - genesis
+
+about:
+  home: https://github.com/genialis/genesis-pyapi/
+  license: Apache Software License
+  summary: 'Python API for the Genesis platform.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

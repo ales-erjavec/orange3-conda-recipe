@@ -1,0 +1,41 @@
+package:
+  name: slumber
+  version: "0.7.1"
+
+source:
+  fn: slumber-0.7.1.tar.gz
+  url: https://pypi.python.org/packages/17/3a/6d42c6a5909207aa2487fda0c6f09c7dac259e5154d6ad74ec160db69660/slumber-0.7.1.tar.gz
+  md5: 58fe531e23b7324b9fbd3faa89a115e2
+
+build:
+  script:
+    - pip install --no-deps --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+
+  run:
+    - python
+    - requests
+
+test:
+  # Python imports
+  imports:
+    - slumber
+
+
+  requires:
+    - mock
+    - unittest2  # [ py26 ]
+
+about:
+  home: http://github.com/samgiles/slumber
+  license: UNKNOWN
+  summary: 'A library that makes consuming a REST API easier and more convenient'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

@@ -1,0 +1,43 @@
+package:
+  name: orange3-network
+  version: "1.1.2"
+
+source:
+  fn: Orange3-Network-1.1.2.tar.gz
+  url: https://pypi.python.org/packages/cc/a8/93c46fa8ad5692a44f75b6d170046fc1f8c082f12a1630a7f18ef74c174b/Orange3-Network-1.1.2.tar.gz
+  md5: 743cebbe71e3ce26fb0dbb744739b0cf
+
+build:
+  script:
+    - pip install --no-deps --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+    - numpy
+
+  run:
+    - python
+    - setuptools
+    - networkx >=1.10
+    - pyqtgraph >=0.9.10
+    - pyqt
+    - orange3
+
+test:
+  # Python imports
+  imports:
+    - orangecontrib
+    - orangecontrib.network
+    - orangecontrib.network.widgets
+
+about:
+  home: https://github.com/biolab/orange3-network
+  license: GNU General Public License v3 or later (GPLv3+)
+  summary: 'Networks add-on for Orange 3 data mining software package.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

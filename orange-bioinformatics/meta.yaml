@@ -1,0 +1,60 @@
+package:
+  name: orange-bioinformatics
+  version: "2.6.18"
+
+source:
+  fn: Orange-Bioinformatics-2.6.18.tar.gz
+  url: https://pypi.python.org/packages/1e/d5/8f9669e86074cfa8ed2965943b69ca7b63cfad6256e71a7fd52a5612db4c/Orange-Bioinformatics-2.6.18.tar.gz
+  md5: e50a6e2fe55f9e28fd731a044598906f
+
+build:
+  script: pip install --no-deps --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+
+  run:
+    - python
+    - setuptools
+    - numpy
+    - scipy
+    - six
+    - genesis-pyapi >=1.1.2
+    - slumber >=0.7.1
+    - requests >=2.6.0
+    - pyqtgraph                # [py3k]
+    - pyqt
+    - orange                   # [py2k]
+    - orange3                  # [py3k]
+
+
+test:
+  # Python imports
+  imports:
+    - orangecontrib
+    - orangecontrib.bio
+    - orangecontrib.bio.dicty
+    - orangecontrib.bio.gene
+    - orangecontrib.bio.geneset
+    - orangecontrib.bio.kegg
+    - orangecontrib.bio.kegg.entry
+    - orangecontrib.bio.ncbi
+    - orangecontrib.bio.utils
+    - orangecontrib.bio.widgets              # [py2k]
+    - orangecontrib.bio.widgets.prototypes   # [py2k]
+    - orangecontrib.bio.widgets.utils        # [py2k]
+    - orangecontrib.bio.widgets3             # [py3k]
+    - orangecontrib.bio.widgets3.utils       # [py3k]
+
+
+about:
+  home: http://orange.biolab.si/download
+  license: GNU General Public License v3 or later (GPLv3+)
+  summary: 'Orange Bioinformatics add-on for Orange data mining software package.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

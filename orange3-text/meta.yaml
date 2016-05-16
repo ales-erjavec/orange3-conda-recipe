@@ -1,0 +1,47 @@
+package:
+  name: orange3-text
+  version: "0.1.10"
+
+source:
+  fn: Orange3-Text-0.1.10.tar.gz
+  url: https://pypi.python.org/packages/1c/9d/8c333fb7458240e740e89ff22e1544e8b2e1b9aacd3c3d1a0fd34ef2d71b/Orange3-Text-0.1.10.tar.gz
+  md5: 40fca5906d54079c45262986553bdeda
+
+build:
+  preserve_egg_dir: True
+  script: pip install --no-deps --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+
+  run:
+    - python
+    - setuptools
+    - gensim >=0.12.3
+    - nltk
+    - numpy
+    - scikit-learn
+    - scipy
+    - pyqt
+    - orange3
+
+test:
+  # Python imports
+  imports:
+    - orangecontrib
+    - orangecontrib.text
+    - orangecontrib.text.tests
+    - orangecontrib.text.tutorials
+    - orangecontrib.text.widgets
+
+about:
+  home: https://github.com/biolab/orange3-text
+  license: UNKNOWN
+  summary: 'Orange3 TextMining add-on.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
