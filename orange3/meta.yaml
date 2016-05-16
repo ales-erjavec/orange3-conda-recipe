@@ -13,13 +13,16 @@ build:
 
   osx_is_app: True
 
+  script: pip install --no-deps --no-binary --no-cache ./
+
 requirements:
   build:
     - python
     - setuptools
     # https://github.com/numpy/numpy/pull/6470
-    - numpy 1.9.2  # [win]
-    - numpy        # [not win]
+    - numpy         != 1.9.3  # [win]
+    - numpy                   # [not win]
+    - pip
 
   run:
     - python
