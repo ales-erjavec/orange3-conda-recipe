@@ -20,7 +20,7 @@ requirements:
     - python
     - setuptools
     # https://github.com/numpy/numpy/pull/6470
-    - numpy         != 1.9.3  # [win]
+    - numpy         !=1.9.3   # [win]
     - numpy                   # [not win]
     - pip
 
