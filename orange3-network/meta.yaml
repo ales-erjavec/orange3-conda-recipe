@@ -7,10 +7,6 @@ source:
   url: https://pypi.python.org/packages/cc/a8/93c46fa8ad5692a44f75b6d170046fc1f8c082f12a1630a7f18ef74c174b/Orange3-Network-1.1.2.tar.gz
   md5: 743cebbe71e3ce26fb0dbb744739b0cf
 
-build:
-  script:
-    - pip install --no-deps --no-cache ./
-
 requirements:
   build:
     - python
