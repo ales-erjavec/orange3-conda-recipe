@@ -1,11 +1,11 @@
 package:
   name: orange-bioinformatics
-  version: "2.6.18"
+  version: "2.6.19"
 
 source:
-  fn: Orange-Bioinformatics-2.6.18.tar.gz
-  url: https://pypi.python.org/packages/1e/d5/8f9669e86074cfa8ed2965943b69ca7b63cfad6256e71a7fd52a5612db4c/Orange-Bioinformatics-2.6.18.tar.gz
-  md5: e50a6e2fe55f9e28fd731a044598906f
+  fn: Orange-Bioinformatics-2.6.19.tar.gz
+  url: https://pypi.python.org/packages/2e/84/3a1717f40a3b9d0925fde57fe7451c169fe46a0d1ca6c76cdab7091d0316/Orange-Bioinformatics-2.6.19.tar.gz
+  md5: 3b58f6eba7097b21aec626fa62aff8ab
 
 build:
   script: pip install --no-deps --no-cache ./
@@ -28,7 +28,7 @@ requirements:
     - pyqtgraph                # [py3k]
     - pyqt
     - orange                   # [py2k]
-    - orange3                  # [py3k]
+    - orange3 >=3.3.5          # [py3k]
 
 
 test:

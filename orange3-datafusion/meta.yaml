@@ -1,11 +1,11 @@
 package:
   name: orange3-datafusion
-  version: "0.1.9"
+  version: "0.1.10"
 
 source:
-  fn: Orange3-DataFusion-0.1.9.tar.gz
-  url: https://pypi.python.org/packages/5a/41/a2d46c4c30448acdd169576f1945c730a49b524d51685ec23ad0b6bd6815/Orange3-DataFusion-0.1.9.tar.gz
-  md5: 7bca9b4dd0c45b0540e60f288b0ce02c
+  fn: Orange3-DataFusion-0.1.10.tar.gz
+  url: https://pypi.python.org/packages/13/e6/c916bb2f29388194dff8509ba955f714b05571b6d93c818cb736fb7a3637/Orange3-DataFusion-0.1.10.tar.gz
+  md5: 08329e849dec5ab9893ac119ec903e37
 
 build:
   script:
@@ -22,7 +22,7 @@ requirements:
   run:
     - python
     - setuptools
-    - orange3
+    - orange3 >=3.3.5
     - numpy
     - scikit-fusion
     - pyqt

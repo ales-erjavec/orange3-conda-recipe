@@ -1,10 +1,11 @@
 package:
   name: orange3
-  version: "3.3.3"
+  version: "3.3.5"
 
 source:
-  git_rev: 3.3.3
-  git_url: https://github.com/biolab/orange3.git
+  fn: Orange3-3.3.5.tar.gz
+  url: https://pypi.python.org/packages/2d/b1/8e98fc731087b3d0ecd8ce4010e73f871d71b5049151d7ec62f745239dd9/Orange3-3.3.5.tar.gz
+  md5: d6966e45e2c206797e36b734d1340332
 
 build:
   number: 0
@@ -18,15 +19,15 @@ requirements:
     - python
     - setuptools
     # https://github.com/numpy/numpy/pull/6470
-    - numpy         !=1.9.3   # [win]
-    - numpy                   # [not win]
+    - numpy         ==1.9.2   # [win]
+    - numpy         ==1.9.3   # [not win]
 
   run:
     - python
     - setuptools
     - numpy         >=1.9.0
     - scipy
-    - scikit-learn  >=0.16
+    - scikit-learn  >=0.17
     - bottlechest
     - chardet       >=2.3.0
     - docutils
