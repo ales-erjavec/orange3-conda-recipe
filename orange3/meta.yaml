@@ -1,11 +1,11 @@
 package:
   name: orange3
-  version: "3.3.5"
+  version: "3.3.6"
 
 source:
-  fn: Orange3-3.3.5.tar.gz
-  url: https://pypi.python.org/packages/2d/b1/8e98fc731087b3d0ecd8ce4010e73f871d71b5049151d7ec62f745239dd9/Orange3-3.3.5.tar.gz
-  md5: d6966e45e2c206797e36b734d1340332
+  fn: Orange3-3.3.6.tar.gz
+  url: https://pypi.python.org/packages/31/b9/1aa1d3fe5a7fedace3895e79b21bc87e4993ed06c2b763bf9f1479575e21/Orange3-3.3.6.tar.gz
+  md5: 569ffc6ba464641b1153ba3fd75567d2
 
 build:
   number: 0
