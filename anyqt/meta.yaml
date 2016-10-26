@@ -1,0 +1,70 @@
+# aa
+
+package:
+  name: anyqt
+  version: "0.0.6"
+
+source:
+  fn: AnyQt-0.0.6.tar.gz
+  url: https://pypi.python.org/packages/ee/29/17c8e74a33ea60d981b22a7194781b090a2d71480af85f3c01c817d04126/AnyQt-0.0.6.tar.gz
+  md5: c357d2d43e24fda651c3f24ffa89f8f4
+
+build:
+  noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - anyqt = anyqt:main
+    #
+    # Would create an entry point called anyqt that calls anyqt.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 0
+
+  script:
+    - pip install --no-deps --no-binary --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pip
+    - wheel
+
+  run:
+    - python
+    - pyqt
+
+test:
+  imports:
+    - AnyQt.QtCore
+    - AnyQt.QtGui
+    - AnyQt.QtWidgets
+    - AnyQt.QtNetwork
+    - AnyQt.QtSvg
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/ales-erjavec/anyqt
+  license: GNU General Public License v3 (GPLv3)
+  summary: 'PyQt4/PyQt5 compatibility layer.'
+  license_family: Public-Domain
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
