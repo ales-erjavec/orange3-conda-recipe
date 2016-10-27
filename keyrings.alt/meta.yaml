@@ -1,0 +1,76 @@
+package:
+  name: keyrings.alt
+  version: "1.1.1"
+
+source:
+  fn: keyrings.alt-1.1.1.tar.gz
+  url: https://pypi.python.org/packages/27/d0/9207bf58de11735fe2239deaecb9eae1084e2887077a700ac8aa27bd8159/keyrings.alt-1.1.1.tar.gz
+  md5: 8571b04032dce5e2e9ed331a82216c15
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  noarch_python: True
+  preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - keyrings.alt = keyrings.alt:main
+    #
+    # Would create an entry point called keyrings.alt that calls keyrings.alt.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+  script:
+    - pip install --no-deps --no-binary --no-cache ./
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - setuptools_scm  >=1.9
+    - pip
+    - wheel
+
+  run:
+    - python
+    - setuptools
+
+test:
+  # Python imports
+  imports:
+    - keyrings
+    - keyrings.alt
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+#  requires:
+#    - fs >=0.5
+#    - pytest >=2.8
+#    - pytest-runner
+#    - setuptools_scm >=1.9
+#    - pycrypto
+#    - backports.unittest_mock   # [py2k]
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/jaraco/keyrings.alt
+  license: MIT License
+  summary: 'Alternate keyring implementations'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
