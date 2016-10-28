@@ -1,11 +1,11 @@
 package:
   name: orange3
-  version: "3.3.6"
+  version: "3.3.8"
 
 source:
-  fn: Orange3-3.3.6.tar.gz
-  url: https://pypi.python.org/packages/31/b9/1aa1d3fe5a7fedace3895e79b21bc87e4993ed06c2b763bf9f1479575e21/Orange3-3.3.6.tar.gz
-  md5: 569ffc6ba464641b1153ba3fd75567d2
+  fn: Orange3-3.3.8.tar.gz
+  url: https://pypi.python.org/packages/ad/ba/1bb39ab6698046c59363187fe7055b5e2b6ac5de89b0837a3af156cc58fc/Orange3-3.3.8.tar.gz
+  md5: 72bea3c476855a29683ec9f53a1ca884
 
 build:
   number: 0
@@ -13,6 +13,12 @@ build:
     - orange-canvas = Orange.canvas.__main__:main
 
   osx_is_app: True
+
+  script:
+    - python setup.py clean --all build -j1 bdist_wheel
+    - if errorlevel 1 exit 1        # [win]
+    - pip install --no-deps --no-cache --no-index -f dist Orange3
+    - if errorlevel 1 exit 1        # [win]
 
 requirements:
   build:
@@ -27,12 +33,12 @@ requirements:
     - setuptools
     - numpy         >=1.9.0
     - scipy
-    - scikit-learn  >=0.17
-    - bottlechest
+    - scikit-learn  >=0.18
+    - bottleneck
     - chardet       >=2.3.0
     - docutils
     - xlrd          >=0.9.2
-    - pyqt
+    - pyqt          4.11.*
     - pyqtgraph
     - joblib
     - python.app    # [osx]
@@ -43,7 +49,6 @@ test:
     - Orange
     - Orange.canvas
     - Orange.canvas.application
-    - Orange.canvas.application.tutorials
     - Orange.canvas.canvas
     - Orange.canvas.canvas.items
     - Orange.canvas.document
